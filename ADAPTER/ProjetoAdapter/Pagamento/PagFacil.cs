@@ -26,7 +26,6 @@
 
         public bool pagar()
         {
-            Console.WriteLine($"Pagamento de R${valor} em {parcelas}x realizado via PagFacil.");
             return true;
         }
     }
