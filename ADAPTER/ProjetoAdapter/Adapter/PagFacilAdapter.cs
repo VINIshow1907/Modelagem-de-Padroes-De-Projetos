@@ -32,12 +32,14 @@ namespace ProjetoAdapter.Adapter
         public bool validarCartao()
         {
             this.configuraCartao(numeroCartao, cvv);
+            Console.WriteLine("Cartão validado com sucesso");
             return this.verificaCartao();
         }
 
         public bool realizarPagamento()
         {
             this.configuraPagamento(valor, parcelas);
+            Console.WriteLine("Aprovado");
             return this.pagar();
         }
     }
