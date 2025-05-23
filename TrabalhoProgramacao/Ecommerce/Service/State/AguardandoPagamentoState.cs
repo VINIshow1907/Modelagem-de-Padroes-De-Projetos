@@ -1,26 +1,30 @@
 ﻿using Ecommerce.Objects.Models;
+using Ecommerce.Service.State;
 
-namespace Ecommerce.Service.State
+namespace Ecommerce.Service.States
 {
-    public class AguardandoPagamentoState : IState
+    public class AguardandoPagamento : IEstadoPedidos
     {
         private Pedido pedido;
 
-        public AguardandoPagamentoState(Pedido pedido)
+        public AguardandoPagamento(Pedido pedido)
         {
             this.pedido = pedido;
         }
-        void IState.cancelarPedido()
+
+        public IEstadoPedidos CancelarPedido()
         {
-            this.pedido.EstadoAtual = new CanceladoState(pedido);
+            return new Cancelado(pedido);
         }
-        void IState.despacharPedido()
+
+        public IEstadoPedidos DespacharPedido()
         {
-            throw new Exception("Operação não suportada, " + "pedido ainda não foi pago");
+            throw new Exception("Operação não suportada, o pedido ainda não foi pago");
         }
-        void IState.sucessoAoPagar()
+
+        public IEstadoPedidos SucessoAoPagar()
         {
-            this.pedido.EstadoAtual = new PagoState(pedido);
+            return new Pago(pedido);
         }
     }
 }

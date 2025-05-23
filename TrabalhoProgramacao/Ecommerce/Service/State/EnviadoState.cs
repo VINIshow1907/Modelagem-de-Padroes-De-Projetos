@@ -2,22 +2,26 @@
 
 namespace Ecommerce.Service.State
 {
-    public class EnviadoState : IState
+    public class EnviadoState : IEstadoPedidos
     {
         private Pedido pedido;
+
         public EnviadoState(Pedido pedido)
         {
             this.pedido = pedido;
         }
-        void IState.cancelarPedido()
+
+        public IEstadoPedidos CancelarPedido()
         {
             throw new Exception("Operação não suportada, pedido já foi enviado");
         }
-        void IState.despacharPedido()
+
+        public IEstadoPedidos DespacharPedido()
         {
             throw new Exception("Operação não suportada, pedido já foi enviado");
         }
-        void IState.sucessoAoPagar()
+
+        public IEstadoPedidos SucessoAoPagar()
         {
             throw new Exception("Operação não suportada, pedido já foi enviado");
         }

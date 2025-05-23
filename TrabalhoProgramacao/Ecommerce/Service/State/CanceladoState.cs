@@ -1,25 +1,30 @@
 ﻿using Ecommerce.Objects.Models;
+using Ecommerce.Service.State;
 
-namespace Ecommerce.Service.State
+namespace Ecommerce.Service.States
 {
-    public class CanceladoState : IState
+    public class Cancelado : IEstadoPedidos
     {
         private Pedido pedido;
-        public CanceladoState(Pedido pedido)
+
+        public Cancelado(Pedido pedido)
         {
             this.pedido = pedido;
         }
-        void IState.cancelarPedido()
+
+        public IEstadoPedidos CancelarPedido()
         {
-            throw new Exception("Operação não suportada, pedido foi cancelado");
+            throw new Exception("Operação não suportada, o pedido foi cancelado");
         }
-        void IState.despacharPedido()
+
+        public IEstadoPedidos DespacharPedido()
         {
-            throw new Exception("Operação não suportada, pedido foi cancelado");
+            throw new Exception("Operação não suportada, o pedido foi cancelado");
         }
-        void IState.sucessoAoPagar()
+
+        public IEstadoPedidos SucessoAoPagar()
         {
-            throw new Exception("Operação não suportada, pedido foi cancelado");
+            throw new Exception("Operação não suportada, o pedido foi cancelado");
         }
     }
 }
