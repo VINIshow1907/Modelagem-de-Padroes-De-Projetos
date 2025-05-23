@@ -2,8 +2,9 @@
 {
     public enum PedidoType
     {
-        AGUARDANDO_PAGAMENTO = 1,
-        CANCELADO = 2,
-        PAGO = 3
+        Aguardando_Pagamento = 1,
+        Cancelado = 2,
+        Enviado = 3,
+        Pago = 4,
     }
 }
