@@ -1,4 +1,4 @@
-﻿namespace EcommercePedidos.Service.Strategies
+﻿namespace Ecommerce.Service.Strategy
 {
     public interface IFrete
     {
