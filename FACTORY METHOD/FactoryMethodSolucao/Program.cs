@@ -1,0 +1,21 @@
+﻿using FactoryMethodSolucao.boletobancario;
+using FactoryMethodSolucao.boletobancario.BancodoBrasil;
+using FactoryMethodSolucao.boletobancario.Caixa;
+
+Console.WriteLine("----------------CAIXA----------------");
+Banco bancoCaixa = new BancoCaixa();
+Console.WriteLine("-------------------------------------");
+bancoCaixa.gerarBoleto(10, 100);
+Console.WriteLine("-------------------------------------");
+bancoCaixa.gerarBoleto(30, 100);
+Console.WriteLine("-------------------------------------");
+bancoCaixa.gerarBoleto(60, 100);
+Console.WriteLine("-------------------------------------");
+Console.WriteLine("----------------BANCO DO BRASIL----------------");
+Banco bancoBrasil = new BancoDoBrasil();
+bancoBrasil.gerarBoleto(10, 100);
+Console.WriteLine("-------------------------------------");
+bancoBrasil.gerarBoleto(30, 100);
+Console.WriteLine("-------------------------------------");
+bancoBrasil.gerarBoleto(60, 100);
+Console.WriteLine("-------------------------------------");
